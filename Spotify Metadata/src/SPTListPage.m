@@ -172,6 +172,10 @@ static NSString * const SPTListPageJSONTotalKey = @"total";
 				   rootObjectKey:(NSString *)rootObjectKey
 						   error:(NSError **)error {
 	
+	if(!data) {
+		return nil;
+	}
+	
 	NSError *decodeerror = nil;
 	id decodedObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&decodeerror];
 	
